@@ -1,0 +1,71 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120vh;
+    background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
+    margin: 0;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 10px;
+    
+}
+
+h1{
+    position: absolute;
+    top: 110px;
+    font-size: 50px;
+    color: #734d96 ;
+    font-family: "Ubuntu Sans", sans-serif;
+}
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #8f7c93;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 54px;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    perspective: 1000px;
+    box-shadow: 1px 2px gray;
+}
+
+.card .inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.card.flipped .inner {
+    transform: rotateY(180deg);
+}
+
+.card .front, .card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .front {
+    background: rgb(235,203,234);
+    background: linear-gradient(60deg, rgba(235,203,234,1) 28%, rgba(222,191,255,1) 53%);
+    transform: rotateY(180deg);
+}
+
+.card .back {
+    background-color: #D9AFD9;
+    background-image: linear-gradient(0deg, #D9AFD9 0%, #c0e2e6 100%);
+    border:solid rgb(119, 115, 115) 1px;
+}
